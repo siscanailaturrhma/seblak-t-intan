@@ -2,7 +2,12 @@
 
 @section('content')
 
-{{-- BERANDA --}}
+@php $warungBuka = \App\Models\Setting::warungBuka(); @endphp
+    <div class="{{ $warungBuka ? 'bg-green-600' : 'bg-gray-800' }} text-white text-center text-sm font-bold py-2">
+        {{ $warungBuka ? 'Warung BUKA, yuk pesan sekarang!' : 'Warung TUTUP, pesanan belum bisa dibuat.' }}
+    </div>
+
+    {{-- BERANDA --}}
 <section id="beranda" class="bg-[#9f2630] text-white">
     <div class="overflow-hidden">
         <img src="{{ asset('images/banner.png') }}" alt="{{ $usaha['nama'] }}" class="block w-full h-auto scale-110">
@@ -17,7 +22,7 @@
 {{-- MENU --}}
 <section id="menu" class="max-w-6xl mx-auto px-4 pt-16">
     <h2 class="text-3xl font-extrabold text-center">Menu & Harga</h2>
-    <p class="text-center text-stone-500 mt-2">Pilih Seblak dan Cemilan Favoritmu.</p>
+    <p class="text-center text-stone-500 mt-2">Pilih Seblak dan Jajanan Favoritmu.</p>
 
     @forelse ($categories as $category)
         <h3 class="mt-12 mb-4 text-xl font-bold text-red-600">{{ $category->name }}</h3>
