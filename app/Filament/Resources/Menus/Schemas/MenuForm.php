@@ -39,7 +39,7 @@ class MenuForm
                 FileUpload::make('image')
                     ->label('Foto')
                     ->image()
-                    ->disk('public')
+                    ->disk(config('filesystems.menu_disk'))
                     ->directory('menus')
                     ->visibility('public'),
                 Toggle::make('is_available')

@@ -21,8 +21,8 @@
     <main class="max-w-2xl mx-auto px-4 py-8">
 
         <div class="bg-white rounded-2xl border border-orange-100 shadow-sm overflow-hidden">
-            @if ($menu->image)
-                <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" class="h-56 w-full object-cover">
+            @if ($menu->image_url)
+                <img src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-56 w-full object-cover">
             @endif
             <div class="p-5">
                 <h1 class="text-2xl font-extrabold">{{ $menu->name }}</h1>

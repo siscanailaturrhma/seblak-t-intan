@@ -18,7 +18,7 @@ class MenusTable
             ->columns([
                 ImageColumn::make('image')
                     ->label('Foto')
-                    ->disk('public'),
+                    ->disk(config('filesystems.menu_disk')),
                 TextColumn::make('name')
                     ->label('Nama menu')
                     ->searchable(),

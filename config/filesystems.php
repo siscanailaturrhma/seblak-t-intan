@@ -15,6 +15,8 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
+    'menu_disk' => env('MENU_DISK', 'public'),
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -37,6 +39,8 @@ return [
             'throw' => false,
             'report' => false,
         ],
+
+        'supabase' => ['driver' => 's3', 'key' => env('SUPABASE_KEY'), 'secret' => env('SUPABASE_SECRET'), 'region' => env('SUPABASE_REGION', 'ap-southeast-2'), 'bucket' => env('SUPABASE_BUCKET', 'menu'), 'endpoint' => env('SUPABASE_ENDPOINT'), 'url' => env('SUPABASE_URL'), 'use_path_style_endpoint' => true, 'throw' => false],
 
         'public' => [
             'driver' => 'local',

@@ -85,4 +85,6 @@ class Menu extends Model
 
         return $groups;
     }
+
+    public function getImageUrlAttribute(): ?string { if (! $this->image) { return null; } $disk = config("filesystems.menu_disk"); return $disk === "public" ? asset("storage/" . $this->image) : \Illuminate\Support\Facades\Storage::disk($disk)->url($this->image); }
 }

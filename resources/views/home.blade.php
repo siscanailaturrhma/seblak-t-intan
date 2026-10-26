@@ -29,8 +29,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($category->menus as $menu)
                 <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden flex flex-col">
-                    @if ($menu->image)
-                        <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" class="h-48 w-full object-cover">
+                    @if ($menu->image_url)
+                        <img src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-48 w-full object-cover">
                     @else
                         <div class="h-48 flex items-center justify-center bg-orange-100 text-5xl">🍜</div>
                     @endif
