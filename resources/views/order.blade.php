@@ -22,7 +22,7 @@
 
         <div class="bg-white rounded-2xl border border-orange-100 shadow-sm overflow-hidden">
             @if ($menu->image_url)
-                <img src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-56 w-full object-cover">
+                <img onerror="this.onerror=null;this.src='/images/menu-dummy.svg'" src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-56 w-full object-cover">
             @endif
             <div class="p-5">
                 <h1 class="text-2xl font-extrabold">{{ $menu->name }}</h1>

@@ -30,7 +30,7 @@
             @foreach ($category->menus as $menu)
                 <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden flex flex-col">
                     @if ($menu->image_url)
-                        <img src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-48 w-full object-cover">
+                        <img onerror="this.onerror=null;this.src='/images/menu-dummy.svg'" src="{{ $menu->image_url }}" alt="{{ $menu->name }}" class="h-48 w-full object-cover">
                     @else
                         <div class="h-48 flex items-center justify-center bg-orange-100 text-5xl">🍜</div>
                     @endif
