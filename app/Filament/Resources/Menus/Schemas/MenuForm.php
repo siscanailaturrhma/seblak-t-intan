@@ -40,7 +40,7 @@ class MenuForm
                     ->label('Foto')
                     ->image()
                     ->disk(config('filesystems.menu_disk'))
-                    ->directory('menus')
+                    ->directory("menus")->saveUploadedFileUsing(function ($file) { $path = "menus/" . \Illuminate\Support\Str::ulid() . "." . strtolower($file->getClientOriginalExtension() ?: "jpg"); \Illuminate\Support\Facades\Storage::disk(config("filesystems.menu_disk"))->put($path, file_get_contents($file->getRealPath())); return $path; })
                     ->visibility('public'),
                 Toggle::make('is_available')
                     ->label('Tersedia')
